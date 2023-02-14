@@ -1,4 +1,4 @@
-package com.pokaboo.member.member;
+package com.pokaboo.mall.member;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;

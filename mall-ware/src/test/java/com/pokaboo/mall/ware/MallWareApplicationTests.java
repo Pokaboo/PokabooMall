@@ -1,13 +1,25 @@
 package com.pokaboo.mall.ware;
 
-import org.junit.jupiter.api.Test;
+import com.pokaboo.mall.ware.entity.WareInfoEntity;
+import com.pokaboo.mall.ware.service.WareInfoService;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
+
+import java.util.List;
 
 @SpringBootTest
-class MallWareApplicationTests {
+@RunWith(SpringRunner.class)
+public class MallWareApplicationTests {
 
+    @Autowired
+    WareInfoService wareInfoService;
     @Test
-    void contextLoads() {
+    public void contextLoads() {
+        List<WareInfoEntity> list = wareInfoService.list();
+        System.out.println("ware : " +list.toString());
     }
 
 }

@@ -1,3 +1,5 @@
+server:
+  port: 11000
 spring:
   application:
     name: mall-ware

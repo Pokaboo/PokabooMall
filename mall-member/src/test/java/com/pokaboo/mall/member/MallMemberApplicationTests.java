@@ -1,7 +1,7 @@
-package com.pokaboo.mall.order;
+package com.pokaboo.mall.member;
 
-import com.pokaboo.mall.order.entity.OrderEntity;
-import com.pokaboo.mall.order.service.OrderService;
+import com.pokaboo.mall.member.entity.MemberEntity;
+import com.pokaboo.mall.member.service.MemberService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,14 +12,14 @@ import java.util.List;
 
 @SpringBootTest
 @RunWith(SpringRunner.class)
-public class MallOrderApplicationTests {
+public  class MallMemberApplicationTests {
 
     @Autowired
-    OrderService orderService;
+    MemberService memberService;
     @Test
     public  void contextLoads() {
-        List<OrderEntity> list = orderService.list();
-        System.out.println("order :" + list.toString());
+        List<MemberEntity> list = memberService.list();
+        System.out.println("member ：" +list.toString() );
     }
 
 }
