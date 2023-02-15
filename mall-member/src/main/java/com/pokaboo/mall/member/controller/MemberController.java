@@ -3,6 +3,7 @@ package com.pokaboo.mall.member.controller;
 import java.util.Arrays;
 import java.util.Map;
 
+import com.pokaboo.mall.member.feign.CouponFenginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -29,6 +30,17 @@ import com.pokaboo.common.utils.R;
 public class MemberController {
     @Autowired
     private MemberService memberService;
+
+    @Autowired
+    private CouponFenginService couponFenginService;
+
+    @RequestMapping("/coupons")
+    public R test(){
+        R coupons = couponFenginService.coupons();
+        MemberEntity memberEntity = new MemberEntity();
+        memberEntity.setNickname("Pokaboo");
+        return R.ok().put("member",memberEntity).put("coupons",coupons.get("coupons"));
+    }
 
     /**
      * 列表
