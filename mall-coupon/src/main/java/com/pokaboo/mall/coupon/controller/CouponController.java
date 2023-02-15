@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,11 +27,22 @@ import com.pokaboo.common.utils.R;
  * @email pokaboo@163.com
  * @date 2023-02-14 19:52:37
  */
+@RefreshScope
 @RestController
 @RequestMapping("coupon/coupon")
 public class CouponController {
     @Autowired
     private CouponService couponService;
+
+    @Value("${coupon.user.name}")
+    private String userName;
+    @Value("${coupon.user.age}")
+    private Integer userAge;
+
+    @RequestMapping("/test/configCenter")
+    public R test(){
+        return R.ok().put("userName",userName).put("userAge",userAge);
+    }
 
     @RequestMapping("/coupons")
     public R coupons(){
