@@ -12,7 +12,7 @@
     <artifactId>mall-product</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>mall-product</name>
-    <description>mall-product</description>
+    <description>商品系统</description>
     <properties>
         <java.version>1.8</java.version>
         <spring-cloud.version>Greenwich.SR3</spring-cloud.version>

@@ -9,11 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.pokaboo.mall</groupId>
-    <artifactId>mall-coupon</artifactId>
+    <artifactId>mall-gateway</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>mall-coupon</name>
-    <description>优惠券系统</description>
-
+    <name>mall-gateway</name>
+    <description>API网关</description>
     <properties>
         <java.version>1.8</java.version>
         <spring-cloud.version>Greenwich.SR3</spring-cloud.version>
@@ -25,13 +24,10 @@
             <artifactId>mall-common</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
+
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-openfeign</artifactId>
+            <artifactId>spring-cloud-starter-gateway</artifactId>
         </dependency>
 
         <dependency>
@@ -60,5 +56,6 @@
             </plugin>
         </plugins>
     </build>
+
 
 </project>
